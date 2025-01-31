@@ -10,6 +10,15 @@ const linkTargetBlankPatch = (): Plugin => ({
 })
 
 export default defineConfig({
+    appType: "mpa",
+    build: {
+        rollupOptions: {
+            input: {
+                index: './index.html',
+                fr: './fr.html',
+            }
+        }
+    },
     plugins: [
         mdPlugin({
             mode: [Mode.HTML],
