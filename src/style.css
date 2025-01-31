@@ -28,8 +28,16 @@ p {
   max-width: 30em;
 }
 
-blockquote p {
+blockquote {
+  margin-left: 1.5em;
+  padding-left: 1em;
   font-style: italic;
+  border-left: 0.25em solid rgba(77, 107, 254, 0.8);
+}
+
+blockquote p {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 
 span.contact {
@@ -57,9 +65,47 @@ a:after {
   bottom: 0;
   transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
   /* background-color: rgba(8, 134, 254, 0.5); */
-  background: rgb(77, 107, 254, 0.5);
+  background: rgba(77, 107, 254, 0.5);
 }
 
 a:hover:after {
   top: 0%;
+}
+
+nav.lang-switcher {
+  position: absolute;
+  top: 5vh;
+  right: 10vw;
+  display: flex;
+  gap: 1em;
+}
+
+nav.lang-switcher a {
+  /* background-color: greenyellow; */
+  text-transform: lowercase;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+  padding-right: 0.4em;
+  padding-left: 0.4em;
+}
+nav.lang-switcher a:not(.active) {
+  color: rgba(77, 107, 254, 0.8);
+}
+
+nav.lang-switcher a.active {
+  opacity: 1;
+}
+
+nav.lang-switcher a:hover {
+  opacity: 1;
+}
+
+nav.lang-switcher a:after {
+  bottom: -2px;
+}
+
+nav.lang-switcher a.active:after {
+  bottom: 0px;
+  top: 100%;
 }
