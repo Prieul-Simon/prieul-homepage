@@ -1,5 +1,4 @@
-import { Plugin } from 'vite'
-import { defineConfig } from 'vite'
+import { defineConfig, Plugin } from 'vite'
 import mdPlugin, { Mode } from 'vite-plugin-markdown'
 
 const linkTargetBlankPatch = (): Plugin => ({
@@ -13,8 +12,8 @@ const linkTargetBlankPatch = (): Plugin => ({
 export default defineConfig({
     plugins: [
         mdPlugin({
-        mode: [Mode.HTML],
-    }),
-    linkTargetBlankPatch(),
-],
+            mode: [Mode.HTML],
+        }),
+        linkTargetBlankPatch(),
+    ],
 })
