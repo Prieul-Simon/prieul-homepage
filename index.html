@@ -6,7 +6,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon Prieul</title>
-    <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="./src/style.css">
     <link href="https://fonts.googleapis.com/css?family=Inter:300,700" rel="stylesheet" />
 </head>
 
@@ -16,7 +16,10 @@
         <a target="_self" href="/fr">FR</a>
     </nav>
     <div id="app"></div>
-    <script type="module" src="/src/content_en.js"></script>
+    <script type="module">
+        import { html } from './src/en.md'
+        document.getElementById('app').innerHTML = html
+    </script>
 </body>
 
 </html>
