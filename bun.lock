@@ -4,7 +4,7 @@
     "": {
       "name": "prieul-homepage",
       "devDependencies": {
-        "@types/bun": "^1.2.2",
+        "@types/bun": "1.2.2",
         "vite": "6.0.5",
         "vite-plugin-markdown": "2.2.0",
       },
