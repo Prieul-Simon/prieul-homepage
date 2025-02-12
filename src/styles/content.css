@@ -30,7 +30,7 @@ blockquote p {
 }
 
 span.contact {
-    color: #485361;
+    color: var(--font-contact);
 }
 
 span.block-spam {
@@ -41,7 +41,7 @@ span.block-spam {
 nav.lang-switcher a {
     text-decoration: none;
     white-space: nowrap;
-    color: #121314;
+    color: var(--font-color);
     position: relative;
 }
 
