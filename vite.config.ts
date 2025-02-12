@@ -66,11 +66,24 @@ const injectScriptProdPlugin = (): Plugin => ({
     },
 })
 
-const linkTargetBlankPatch = (): Plugin => ({
-    name: 'link-target-blank-patch',
+const linkTargetBlankPatchDevPlugin = (): Plugin => ({
+    name: 'link-target-blank-patch-dev-plugin',
+    apply: 'serve',
+    enforce: 'post',
+    transform(code, id) {
+        if (id.endsWith('.md')) {
+            return code.replaceAll('<a href=', '<a target=\\"_blank\\" href=')
+        }
+        return code
+    },
+})
+
+const linkTargetBlankPatchProdPlugin = (): Plugin => ({
+    name: 'link-target-blank-patch-prod-plugin',
+    apply: 'build',
     enforce: 'post',
     transformIndexHtml(html) {
-        return html.replaceAll('<a href=', '<a target=\\"_blank\\" href=')
+        return html.replaceAll('<a href=', '<a target="_blank" href=')
     },
 })
 
@@ -89,6 +102,7 @@ export default defineConfig({
         mdDevPlugin(),
         injectScriptDevPlugin(),
         injectScriptProdPlugin(),
-        linkTargetBlankPatch(),
+        linkTargetBlankPatchDevPlugin(),
+        linkTargetBlankPatchProdPlugin(),
     ],
 })
