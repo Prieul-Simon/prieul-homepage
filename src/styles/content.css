@@ -37,14 +37,16 @@ span.block-spam {
     display: none;
 }
 
-a {
+.main-content a,
+nav.lang-switcher a {
     text-decoration: none;
     white-space: nowrap;
     color: #121314;
     position: relative;
 }
 
-a:after {
+.main-content a:after,
+nav.lang-switcher a:after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -56,6 +58,7 @@ a:after {
     background: var(--purple-links);
 }
 
-a:hover:after {
+.main-content a:hover:after,
+nav.lang-switcher a:hover:after {
     top: 0%;
 }

@@ -1,0 +1,27 @@
+nav.external-links {
+    padding-top: 1.5em;
+    padding-inline-start: 3.0em;
+}
+
+nav.external-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    gap: 1.15em;
+}
+
+nav.external-links ul li {
+    margin: 0;
+}
+
+nav.external-links ul li a {
+    color: var(--external-links);
+    text-decoration: none;
+    font-size: 1.7em;
+}
+
+nav.external-links ul li a:hover {
+    color: var(--purple-links);
+}
