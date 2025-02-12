@@ -1,0 +1,13 @@
+:root {
+    --font-color: #121314;
+    --purple-main: rgba(77, 107, 254, 0.8);
+    --purple-links: rgba(77, 107, 254, 0.5);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(10px + 0.33vw);
+    -webkit-font-smoothing: antialiased;
+    padding: 5vh 10vw;
+    color: var(--font-color);
+}
