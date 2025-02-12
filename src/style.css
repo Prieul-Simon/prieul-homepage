@@ -1,9 +1,15 @@
+:root {
+  --font-color: #121314;
+  --purple-main: rgba(77, 107, 254, 0.8);
+  --purple-links: rgba(77, 107, 254, 0.5);
+}
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: calc(10px + 0.33vw);
   -webkit-font-smoothing: antialiased;
   padding: 5vh 10vw;
-  color: #121314;
+  color: var(--font-color);
 }
 
 h1 {
@@ -29,7 +35,7 @@ blockquote {
   margin-left: 1.5em;
   padding-left: 1em;
   font-style: italic;
-  border-left: 0.25em solid rgba(77, 107, 254, 0.8);
+  border-left: 0.25em solid var(--purple-main);
 }
 
 blockquote p {
@@ -61,7 +67,7 @@ a:after {
   right: -0.1em;
   bottom: 0;
   transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-  background: rgba(77, 107, 254, 0.5);
+  background: var(--purple-links);
 }
 
 a:hover:after {
@@ -85,7 +91,7 @@ nav.lang-switcher a {
   padding-left: 0.4em;
 }
 nav.lang-switcher a:not(.active) {
-  color: rgba(77, 107, 254, 0.8);
+  color: var(--purple-main);
 }
 
 nav.lang-switcher a.active {
