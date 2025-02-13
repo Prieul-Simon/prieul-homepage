@@ -1,7 +1,8 @@
 nav.lang-switcher {
     position: absolute;
     top: 5vh;
-    right: 10vw;
+    /* right: 10vw; */
+    left: calc(60vw + 6.0em);
     display: flex;
     gap: 1em;
 }

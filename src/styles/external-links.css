@@ -1,6 +1,7 @@
 nav.external-links {
-    padding-top: 1.5em;
-    padding-inline-start: 3.0em;
+    position: absolute;
+    top: 4.5vh;
+    left: 60vw;
 }
 
 nav.external-links ul {
@@ -8,7 +9,7 @@ nav.external-links ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     gap: 1.15em;
 }
 

@@ -5,7 +5,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.2em;
+    font-size: 2.1em;
     font-weight: 700;
     letter-spacing: -1.5px;
 }
@@ -21,12 +21,13 @@ blockquote {
     margin-left: 1.5em;
     padding-left: 1em;
     font-style: italic;
+    font-size: 0.8em;
     border-left: 0.25em solid var(--purple-main);
 }
 
 blockquote p {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
+    padding-top: 0em;
+    padding-bottom: 0em;
 }
 
 span.contact {
