@@ -7,7 +7,7 @@ I am currently based in Toulouse, France.
 
 Curious and passionated, fullstack developer in the web environment, expert and specialized in the Javascript ecosystem, 
 my favorite technologies of the moment are [Docker](https://www.docker.com), [Node](https://nodejs.org), [Bun](https://bun.sh), [TypeScript](https://www.typescriptlang.org), [Fastify](https://fastify.dev), [Vite](https://vitejs.dev), and [Vue.js](https://vuejs.org) ❤️.\
-You can see my [social links here](https://links.prieul.fr), some of my public projects on [GitHub](https://github.com/Prieul-Simon) and you can also contact me at <span class="contact">sim<!-- sdfjsdhfkjypcs --><span class="block-spam" aria-hidden="true">PLEASE&nbsp;GO&nbsp;AWAY!</span>on.prieul&nbsp;a<!-- sdfjsdhfkjypcs -->t&nbsp;gm<!-- sdfjsdhfkjypcs -->ail.com</span>.
+You can see my [social links here](https://links.prieul.fr), some of my public projects on [GitHub](https://github.com/Prieul-Simon) and you can also contact me at <span class="contact">sim<!-- sdfjsdhfkjypcs --><span class="block-spam" aria-hidden="true">PLEASE&nbsp;GO&nbsp;AWAY!</span>on.prieul(a<!-- sdfjsdhfkjypcs -->t)gm<!-- sdfjsdhfkjypcs -->ail.com</span>.
 
 I am interested in code architecture and DX, and I am an adept of programming with a more declarative and functional approach 🚀.
 > ✨ Code is for humans, not computers.
