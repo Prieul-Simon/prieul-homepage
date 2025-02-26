@@ -1,0 +1,8 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: calc(10px + 0.33vw);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 4.0vh 10.4vw 0 10.4vw;
+    color: var(--font-color);
+}
