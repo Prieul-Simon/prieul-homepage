@@ -38,16 +38,14 @@ span.block-spam {
     display: none;
 }
 
-.main-content a,
-nav.lang-switcher a {
+.main-content a {
     text-decoration: none;
     white-space: nowrap;
     color: var(--font-color);
     position: relative;
 }
 
-.main-content a:after,
-nav.lang-switcher a:after {
+.main-content a:after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -59,7 +57,6 @@ nav.lang-switcher a:after {
     background: var(--purple-links);
 }
 
-.main-content a:hover:after,
-nav.lang-switcher a:hover:after {
+.main-content a:hover:after {
     top: 0%;
 }
