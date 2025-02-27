@@ -27,6 +27,7 @@ nav.lang-switcher a:not(.active) {
 
 nav.lang-switcher a.active {
     color: var(--lang-active-text);
+    border-color: var(--lang-active-border);
     cursor: default;
 }
 

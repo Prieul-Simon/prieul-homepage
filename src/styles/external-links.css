@@ -24,5 +24,5 @@ nav.external-links ul li a {
 }
 
 nav.external-links ul li a:hover {
-    color: var(--purple-links);
+    color: var(--external-links-hover);
 }
