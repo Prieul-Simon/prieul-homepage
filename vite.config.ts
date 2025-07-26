@@ -41,13 +41,13 @@ const injectScriptDevPlugin = (): Plugin => ({
     transformIndexHtml(html) {
         return html
             .replace('<!-- APP-DEV-EN -->', `
-    <div id="app-dev" class="main-content"></div>
+    <main id="app-dev" class="main-content"></main>
     <script id="dev-script" type="module">
         import { html } from './src/en.md'
         document.getElementById('app-dev').innerHTML = html
     </script>`)
             .replace('<!-- APP-DEV-FR -->', `
-    <div id="app-dev" class="main-content"></div>
+    <main id="app-dev" class="main-content"></main>
     <script id="dev-script" type="module">
         import { html } from './src/fr.md'
         document.getElementById('app-dev').innerHTML = html
