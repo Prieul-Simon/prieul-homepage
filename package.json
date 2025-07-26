@@ -1,16 +1,17 @@
 {
   "name": "prieul-homepage",
-  "private": true,
   "version": "0.1.1",
-  "type": "module",
+  "devDependencies": {
+    "@types/bun": "1.2.2",
+    "unhead": "2.0.12",
+    "vite": "6.0.5",
+    "vite-plugin-markdown": "2.2.0"
+  },
+  "private": true,
   "scripts": {
     "dev": "            bunx --bun vite",
     "build": "          bunx --bun vite build",
     "preview": "        bunx --bun vite preview"
   },
-  "devDependencies": {
-    "@types/bun": "1.2.2",
-    "vite": "6.0.5",
-    "vite-plugin-markdown": "2.2.0"
-  }
+  "type": "module"
 }

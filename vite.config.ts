@@ -2,6 +2,119 @@ import { defineConfig, Plugin } from 'vite'
 import mdPlugin, { Mode } from 'vite-plugin-markdown'
 import frontMatter from 'front-matter'
 import markdownIt from 'markdown-it'
+import { createHead, transformHtmlTemplate } from 'unhead/server'
+
+type ResolvableHeads = NonNullable<NonNullable<Parameters<typeof createHead>[0]>['init']>
+const HTML_COMMON_HEAD: ResolvableHeads = [
+    {
+        titleTemplate: 'Simon Prieul | %s',
+        link: [
+            {
+                rel: 'icon',
+                type: 'image/svg+xml',
+                href: '/favicon.svg',
+                sizes: 'any',
+            },
+            {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css?family=Inter:300,700',
+            },
+            {
+                rel: 'stylesheet',
+                href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css',
+                integrity: "sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==",
+                crossorigin: "anonymous",
+                referrerpolicy: "no-referrer",
+            },
+        ],
+        meta: [
+            {
+                name: 'application-name',
+                content: 'Simon Prieul',
+            },
+            {
+                name: 'author',
+                content: 'Simon Prieul',
+            },
+            {
+                name: 'keywords',
+                content: 'simon, prieul, web, developer, fullstack, software, engineer, javascript, typescript, code'
+            }
+        ]
+    }
+]
+
+const titleAndDesc = [
+    'Software Engineer',
+    'Simon Prieul, senior french software engineer and fullstack web developer.',
+    'Ingénieur Logiciel',
+    'Simon Prieul, ingénieur logiciel senior français et développeur web fullstack.',
+]
+const HTML_HEADS: Record<string, ResolvableHeads> = {
+    'index.html': [
+        {
+            htmlAttrs: { lang: 'en', translate: 'no' },
+            title: titleAndDesc[0],
+            meta: [
+                {
+                    name: 'description',
+                    content: titleAndDesc[1],
+                },
+                {
+                    property: 'og:title',
+                    content: titleAndDesc[0],
+                },
+                {
+                    property: 'og:description',
+                    content: titleAndDesc[1],
+                },
+            ],
+            link: [
+                {
+                    rel: 'canonical',
+                    href: 'https://simon.prieul.fr',
+                }
+            ],
+        }
+    ],
+    'fr.html': [
+        {
+            htmlAttrs: { lang: 'fr', translate: 'no' },
+            title: titleAndDesc[2],
+            meta: [
+                {
+                    name: 'description',
+                    content: titleAndDesc[3],
+                },
+                {
+                    property: 'og:title',
+                    content: titleAndDesc[2],
+                },
+                {
+                    property: 'og:description',
+                    content: titleAndDesc[3],
+                },
+            ],
+            link: [
+                {
+                    rel: 'canonical',
+                    href: 'https://simon.prieul.fr/fr',
+                }
+            ],
+        }
+    ],
+}
+
+const unheadPlugin = (): Plugin => {
+    return {
+        name: 'unhead-plugin',
+        async transformIndexHtml(html, ctx) {
+            const filename = ctx.filename.split('/').pop() ?? 'index.html'
+            const init = [...HTML_COMMON_HEAD, ...HTML_HEADS[filename]]
+            return await transformHtmlTemplate(createHead({ init }), html)
+        },
+    }
+}
 
 const mdInjectProdPlugin = (): Plugin => {
     // From implementation in ./node_modules/vite-plugin-markdown/dist/index.js
@@ -98,6 +211,7 @@ export default defineConfig({
         }
     },
     plugins: [
+        unheadPlugin(),
         mdInjectProdPlugin(),
         mdDevPlugin(),
         injectScriptDevPlugin(),
